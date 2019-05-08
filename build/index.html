@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SME Survey</title>
+	<style type="text/css" src=""></style>
+</head>
+<body>
+	<div class="landing-page">
+		<!-- <form action="https://us-central1-sme-survey-form.cloudfunctions.net/api/form/{spredsheetId}" method="POST"> -->
+		<form>
+			<div class="info-container">
+				Full Name: <input type="text" id='fname' name="fname" required /><br />
+	      Name of the Industry: <input type="text" id='iname' name="iname" required /><br />
+	      E-mail: <input type="email" id='email' name="email" required /><br />
+	      Contact Number: <input type="number" id='cnumber' name="cnumber" required /><br />
+	      Experience: <input type="text" id='xp' name="xp" required /><br />
+	      Gender:<br />
+	      <input type="radio" name="gender" value="male" required />Male<br />
+	      <input type="radio" name="gender" value="female" required />Female<br /><br />
+			</div>
+	    <div class='question-container'>
+	      <!-- PAGE-1 -->
+	      <div id='page1'>
+	        <h1>Organizational Attributes</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Safety policy has implemented in the industry.</h3>
+	          1<input type="radio" id='a1' name="q1" value="1" required>
+	          2<input type="radio" id='a1' name="q1" value="2">
+	          3<input type="radio" id='a1' name="q1" value="3">
+	          4<input type="radio" id='a1' name="q1" value="4">
+	          5<input type="radio" id='a1' name="q1" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. Industry has a safety department & committee.</h3>
+	          1<input type="radio" id='a2' name="q2" value="1" required>
+	          2<input type="radio" id='a2' name="q2" value="2">
+	          3<input type="radio" id='a2' name="q2" value="3">
+	          4<input type="radio" id='a2' name="q2" value="4">
+	          5<input type="radio" id='a2' name="q2" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. All the workers are always made aware of safety issues by safety officer.</h3>
+	          1<input type="radio" id='a3' name="q3" value="1" required>
+	          2<input type="radio" id='a3' name="q3" value="2">
+	          3<input type="radio" id='a3' name="q3" value="3">
+	          4<input type="radio" id='a3' name="q3" value="4">
+	          5<input type="radio" id='a3' name="q3" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-2 -->
+	      <div id='page2'>
+	        <h1>Occupational Safety Services/documentation</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Periodic medical examination is done for all the workers.</h3>
+	          1<input type="radio" id='b1' name="q4" value="1" required>
+	          2<input type="radio" id='b1' name="q4" value="2">
+	          3<input type="radio" id='b1' name="q4" value="3">
+	          4<input type="radio" id='b1' name="q4" value="4">
+	          5<input type="radio" id='b1' name="q4" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. All the workers are having medical insurance which is provided by the industry.</h3>
+	          1<input type="radio" id='b2' name="q5" value="1" required>
+	          2<input type="radio" id='b2' name="q5" value="2">
+	          3<input type="radio" id='b2' name="q5" value="3">
+	          4<input type="radio" id='b2' name="q5" value="4">
+	          5<input type="radio" id='b2' name="q5" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. First aid boxes contain all the required medicines in all the sections.</h3>
+	          1<input type="radio" id='b3' name="q6" value="1" required>
+	          2<input type="radio" id='b3' name="q6" value="2">
+	          3<input type="radio" id='b3' name="q6" value="3">
+	          4<input type="radio" id='b3' name="q6" value="4">
+	          5<input type="radio" id='b3' name="q6" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. Safety programs conducted for workers are well documented.</h3>
+	          1<input type="radio" id='b4' name="q7" value="1" required>
+	          2<input type="radio" id='b4' name="q7" value="2">
+	          3<input type="radio" id='b4' name="q7" value="3">
+	          4<input type="radio" id='b4' name="q7" value="4">
+	          5<input type="radio" id='b4' name="q7" value="5" checked>
+	        </div>
+	        <div id='question5'>
+	          <h3>5. Record of accidents is maintained by the industry.</h3>
+	          1<input type="radio" id='b5' name="q8" value="1" required>
+	          2<input type="radio" id='b5' name="q8" value="2">
+	          3<input type="radio" id='b5' name="q8" value="3">
+	          4<input type="radio" id='b5' name="q8" value="4">
+	          5<input type="radio" id='b5' name="q8" value="5" checked>
+	        </div>
+	        <div id='question6'>
+	          <h3>6. Worker’s absentee record is maintained by the industry.</h3>
+	          1<input type="radio" id='b6' name="q9" value="1" required>
+	          2<input type="radio" id='b6' name="q9" value="2">
+	          3<input type="radio" id='b6' name="q9" value="3">
+	          4<input type="radio" id='b6' name="q9" value="4">
+	          5<input type="radio" id='b6' name="q9" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-3 -->
+	      <div id='page3'>
+	        <h1>Workplace Layout and Housekeeping</h1><hr>
+	        <div id='question1'>
+	          <h3>1. There is adequate and smooth flow of material.</h3>
+	          1<input type="radio" id='c1' name="q10" value="1" required>
+	          2<input type="radio" id='c1' name="q10" value="2">
+	          3<input type="radio" id='c1' name="q10" value="3">
+	          4<input type="radio" id='c1' name="q10" value="4">
+	          5<input type="radio" id='c1' name="q10" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. Well designed layout of safe and smooth production line.</h3>
+	          1<input type="radio" id='c2' name="q11" value="1" required>
+	          2<input type="radio" id='c2' name="q11" value="2">
+	          3<input type="radio" id='c2' name="q11" value="3">
+	          4<input type="radio" id='c2' name="q11" value="4">
+	          5<input type="radio" id='c2' name="q11" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. Floors, walls and ceilings are properly designed and cleaned.</h3>
+	          1<input type="radio" id='c3' name="q12" value="1" required>
+	          2<input type="radio" id='c3' name="q12" value="2">
+	          3<input type="radio" id='c3' name="q12" value="3">
+	          4<input type="radio" id='c3' name="q12" value="4">
+	          5<input type="radio" id='c3' name="q12" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. Waste is properly disposed, disposable bins are clearly marked and located.</h3>
+	          1<input type="radio" id='c4' name="q13" value="1" required>
+	          2<input type="radio" id='c4' name="q13" value="2">
+	          3<input type="radio" id='c4' name="q13" value="3">
+	          4<input type="radio" id='c4' name="q13" value="4">
+	          5<input type="radio" id='c4' name="q13" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-4 -->
+	      <div id='page4'>
+	        <h1>Equipment & Hand Tools Safety and Machine Guarding</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Periodic medical examination is done for all the workers.</h3>
+	          1<input type="radio" id='d1' name="q14" value="1" required>
+	          2<input type="radio" id='d1' name="q14" value="2">
+	          3<input type="radio" id='d1' name="q14" value="3">
+	          4<input type="radio" id='d1' name="q14" value="4">
+	          5<input type="radio" id='d1' name="q14" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. Proper guards are available with all machinery and equipment’s.</h3>
+	          1<input type="radio" id='d2' name="q15" value="1" required>
+	          2<input type="radio" id='d2' name="q15" value="2">
+	          3<input type="radio" id='d2' name="q15" value="3">
+	          4<input type="radio" id='d2' name="q15" value="4">
+	          5<input type="radio" id='d2' name="q15" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. Industry has proper storage area for hand tools.</h3>
+	          1<input type="radio" id='d3' name="q16" value="1" required>
+	          2<input type="radio" id='d3' name="q16" value="2">
+	          3<input type="radio" id='d3' name="q16" value="3">
+	          4<input type="radio" id='d3' name="q16" value="4">
+	          5<input type="radio" id='d3' name="q16" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. Training programs are conducted frequently for proper use of hand tools and equipments.</h3>
+	          1<input type="radio" id='d4' name="q17" value="1" required>
+	          2<input type="radio" id='d4' name="q17" value="2">
+	          3<input type="radio" id='d4' name="q17" value="3">
+	          4<input type="radio" id='d4' name="q17" value="4">
+	          5<input type="radio" id='d4' name="q17" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-5 -->
+	      <div id='page5'>
+	        <h1>Fire Prevention, fire fighting and electrical safety</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Industry has fire detection system.</h3>
+	          1<input type="radio" id='e1' name="q18" value="1" required>
+	          2<input type="radio" id='e1' name="q18" value="2">
+	          3<input type="radio" id='e1' name="q18" value="3">
+	          4<input type="radio" id='e1' name="q18" value="4">
+	          5<input type="radio" id='e1' name="q18" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. Alarm system is implemented in the industry.</h3>
+	          1<input type="radio" id='e2' name="q19" value="1" required>
+	          2<input type="radio" id='e2' name="q19" value="2">
+	          3<input type="radio" id='e2' name="q19" value="3">
+	          4<input type="radio" id='e2' name="q19" value="4">
+	          5<input type="radio" id='e2' name="q19" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. Training is carried out for fire-fighting and emergency plan.</h3>
+	          1<input type="radio" id='e3' name="q20" value="1" required>
+	          2<input type="radio" id='e3' name="q20" value="2">
+	          3<input type="radio" id='e3' name="q20" value="3">
+	          4<input type="radio" id='e3' name="q20" value="4">
+	          5<input type="radio" id='e3' name="q20" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. Industry has fire extinguishing system.</h3>
+	          1<input type="radio" id='e4' name="q21" value="1" required>
+	          2<input type="radio" id='e4' name="q21" value="2">
+	          3<input type="radio" id='e4' name="q21" value="3">
+	          4<input type="radio" id='e4' name="q21" value="4">
+	          5<input type="radio" id='e4' name="q21" value="5" checked>
+	        </div>
+	        <div id='question5'>
+	          <h3>5. In case of emergency, we are using emergency exit and exit signs.</h3>
+	          1<input type="radio" id='e5' name="q22" value="1" required>
+	          2<input type="radio" id='e5' name="q22" value="2">
+	          3<input type="radio" id='e5' name="q22" value="3">
+	          4<input type="radio" id='e5' name="q22" value="4">
+	          5<input type="radio" id='e5' name="q22" value="5" checked>
+	        </div>
+	        <div id='question6'>
+	          <h3>6. There is proper coverage of electrical wires and cables.</h3>
+	          1<input type="radio" id='e6' name="q23" value="1" required>
+	          2<input type="radio" id='e6' name="q23" value="2">
+	          3<input type="radio" id='e6' name="q23" value="3">
+	          4<input type="radio" id='e6' name="q23" value="4">
+	          5<input type="radio" id='e6' name="q23" value="5" checked>
+	        </div>
+	        <div id='question7'>
+	          <h3>7. Industry has proper electrical wiring.</h3>
+	          1<input type="radio" id='e7' name="q24" value="1" required>
+	          2<input type="radio" id='e7' name="q24" value="2">
+	          3<input type="radio" id='e7' name="q24" value="3">
+	          4<input type="radio" id='e7' name="q24" value="4">
+	          5<input type="radio" id='e7' name="q24" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-6 -->
+	      <div id='page6'>
+	        <h1>Material Handling and Storage</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Industry provides safe and secure transportation for material handling.</h3>
+	          1<input type="radio" id='f1' name="q25" value="1" required>
+	          2<input type="radio" id='f1' name="q25" value="2">
+	          3<input type="radio" id='f1' name="q25" value="3">
+	          4<input type="radio" id='f1' name="q25" value="4">
+	          5<input type="radio" id='f1' name="q25" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. Industry has provision of proper cranes and conveyors.</h3>
+	          1<input type="radio" id='f2' name="q26" value="1" required>
+	          2<input type="radio" id='f2' name="q26" value="2">
+	          3<input type="radio" id='f2' name="q26" value="3">
+	          4<input type="radio" id='f2' name="q26" value="4">
+	          5<input type="radio" id='f2' name="q26" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. Industry made proper schedule to inspect the material handling and storage area.</h3>
+	          1<input type="radio" id='f3' name="q27" value="1" required>
+	          2<input type="radio" id='f3' name="q27" value="2">
+	          3<input type="radio" id='f3' name="q27" value="3">
+	          4<input type="radio" id='f3' name="q27" value="4">
+	          5<input type="radio" id='f3' name="q27" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. Industry has safe storage and stacking for material handling.</h3>
+	          1<input type="radio" id='f4' name="q28" value="1" required>
+	          2<input type="radio" id='f4' name="q28" value="2">
+	          3<input type="radio" id='f4' name="q28" value="3">
+	          4<input type="radio" id='f4' name="q28" value="4">
+	          5<input type="radio" id='f4' name="q28" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-7 -->
+	      <div id='page7'>
+	        <h1>Occupational Exposures</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Workers are fully protected from liquid chemicals.</h3>
+	          1<input type="radio" id='g1' name="q29" value="1" required>
+	          2<input type="radio" id='g1' name="q29" value="2">
+	          3<input type="radio" id='g1' name="q29" value="3">
+	          4<input type="radio" id='g1' name="q29" value="4">
+	          5<input type="radio" id='g1' name="q29" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. Industry has proper arrangement to control noise and vibration pollution.</h3>
+	          1<input type="radio" id='g2' name="q30" value="1" required>
+	          2<input type="radio" id='g2' name="q30" value="2">
+	          3<input type="radio" id='g2' name="q30" value="3">
+	          4<input type="radio" id='g2' name="q30" value="4">
+	          5<input type="radio" id='g2' name="q30" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. Industry has provision for avoiding exposure to high thermal conditions.</h3>
+	          1<input type="radio" id='g3' name="q31" value="1" required>
+	          2<input type="radio" id='g3' name="q31" value="2">
+	          3<input type="radio" id='g3' name="q31" value="3">
+	          4<input type="radio" id='g3' name="q31" value="4">
+	          5<input type="radio" id='g3' name="q31" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. There is monitoring system for occupational exposures.</h3>
+	          1<input type="radio" id='g4' name="q32" value="1" required>
+	          2<input type="radio" id='g4' name="q32" value="2">
+	          3<input type="radio" id='g4' name="q32" value="3">
+	          4<input type="radio" id='g4' name="q32" value="4">
+	          5<input type="radio" id='g4' name="q32" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-8 -->
+	      <div id='page8'>
+	        <h1>Personal Protective Equipment (PPE)</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Industry provides personal protective equipments (PPE) to workers.</h3>
+	          1<input type="radio" id='h1' name="q33" value="1" required>
+	          2<input type="radio" id='h1' name="q33" value="2">
+	          3<input type="radio" id='h1' name="q33" value="3">
+	          4<input type="radio" id='h1' name="q33" value="4">
+	          5<input type="radio" id='h1' name="q33" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. All the workers are using proper PPE.</h3>
+	          1<input type="radio" id='h2' name="q34" value="1" required>
+	          2<input type="radio" id='h2' name="q34" value="2">
+	          3<input type="radio" id='h2' name="q34" value="3">
+	          4<input type="radio" id='h2' name="q34" value="4">
+	          5<input type="radio" id='h2' name="q34" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. PPE are maintained and serviced properly.</h3>
+	          1<input type="radio" id='h3' name="q35" value="1" required>
+	          2<input type="radio" id='h3' name="q35" value="2">
+	          3<input type="radio" id='h3' name="q35" value="3">
+	          4<input type="radio" id='h3' name="q35" value="4">
+	          5<input type="radio" id='h3' name="q35" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. Industry provides the training for PPE usage.</h3>
+	          1<input type="radio" id='h4' name="q36" value="1" required>
+	          2<input type="radio" id='h4' name="q36" value="2">
+	          3<input type="radio" id='h4' name="q36" value="3">
+	          4<input type="radio" id='h4' name="q36" value="4">
+	          5<input type="radio" id='h4' name="q36" value="5" checked>
+	        </div>
+	      </div>
+
+	      <!-- PAGE-9 -->
+	      <div id='page9'>
+	        <h1>Hygiene Factors</h1><hr>
+	        <div id='question1'>
+	          <h3>1. Proper supply of drinking water within the industry.</h3>
+	          1<input type="radio" id='i1' name="q37" value="1" required>
+	          2<input type="radio" id='i1' name="q37" value="2">
+	          3<input type="radio" id='i1' name="q37" value="3">
+	          4<input type="radio" id='i1' name="q37" value="4">
+	          5<input type="radio" id='i1' name="q37" value="5" checked>
+	        </div>
+	        <div id='question2'>
+	          <h3>2. Bathrooms, toilets and urinals are properly cleaned.</h3>
+	          1<input type="radio" id='i2' name="q38" value="1" required>
+	          2<input type="radio" id='i2' name="q38" value="2">
+	          3<input type="radio" id='i2' name="q38" value="3">
+	          4<input type="radio" id='i2' name="q38" value="4">
+	          5<input type="radio" id='i2' name="q38" value="5" checked>
+	        </div>
+	        <div id='question3'>
+	          <h3>3. Rest area and canteen is available for workers.</h3>
+	          1<input type="radio" id='i3' name="q39" value="1" required>
+	          2<input type="radio" id='i3' name="q39" value="2">
+	          3<input type="radio" id='i3' name="q39" value="3">
+	          4<input type="radio" id='i3' name="q39" value="4">
+	          5<input type="radio" id='i3' name="q39" value="5" checked>
+	        </div>
+	        <div id='question4'>
+	          <h3>4. There is good quality of light and ventilation in the working area.</h3>
+	          1<input type="radio" id='i4' name="q40" value="1" required>
+	          2<input type="radio" id='i4' name="q40" value="2">
+	          3<input type="radio" id='i4' name="q40" value="3">
+	          4<input type="radio" id='i4' name="q40" value="4">
+	          5<input type="radio" id='i4' name="q40" value="5" checked>
+	        </div>
+	      </div>
+	    </div>
+	    <!-- <input type="submit" name="submit" /> -->
+	    <button type="submit">Submit</button>
+		</form>
+	</div>
+	<div class="result-page"></div>
+</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+	<script type="text/javascript">
+		document.querySelector('form').addEventListener('submit', function (e) {
+		    //prevent the normal submission of the form
+		    e.preventDefault();
+
+		    var i, query, qcount = 40;
+		    var quesArr = new Array(qcount).fill(0);
+		    for ( i = 0; i < qcount; i++ ) {
+		      query = 'input[name="q' + (i + 1) + '"]:checked';
+		        quesArr[ i ] = document.querySelector( query ).value;
+		    }
+
+				fname = document.getElementById("fname").value;
+				iname = document.getElementById("iname").value;
+				email = document.getElementById("email").value;
+				cnumber = document.getElementById("cnumber").value;
+				xp = document.getElementById("xp").value;
+				gender = document.querySelector( 'input[name="gender"]:checked' ).value;
+
+
+				params = {
+					info: [
+				    fname, 
+				    iname, 
+				    email, 
+				    cnumber, 
+				    xp, 
+				    gender,
+				    false
+					],
+					values: {
+					  SheetA: { rawdata: [ quesArr[0], quesArr[1], quesArr[2] ] },
+					  SheetB: { rawdata: [ quesArr[3], quesArr[4],quesArr[5], quesArr[6], quesArr[7], quesArr[8] ] },
+					  SheetC: { rawdata: [ quesArr[9], quesArr[10], quesArr[11], quesArr[12] ] },
+					  SheetD: { rawdata: [ quesArr[13], quesArr[14], quesArr[15], quesArr[16] ] },
+					  SheetE: { rawdata: [ quesArr[17], quesArr[18], quesArr[19], quesArr[20], quesArr[21], quesArr[22], quesArr[23] ] },
+					  SheetF: { rawdata: [ quesArr[24], quesArr[25], quesArr[26], quesArr[27] ] },
+					  SheetG: { rawdata: [ quesArr[28], quesArr[29], quesArr[30], quesArr[31] ] },
+					  SheetH: { rawdata: [ quesArr[32], quesArr[33], quesArr[34], quesArr[35] ] },
+					  SheetI: { rawdata: [ quesArr[36], quesArr[37], quesArr[38], quesArr[39] ] }
+					}
+				}
+
+				axios.post('https://us-central1-sme-survey-form.cloudfunctions.net/api/form/6969', params)
+					.then(function (response) {
+					  console.log(response);
+					})
+					.catch(function (error) {
+					  console.log(error);
+					});
+				});
+	</script>
+</html>
+
+<!-- {
+  "info": [
+    "Ashish", 
+    "Chavda Ltd.", 
+    "fag@gag.com", 
+    1234556789, 
+    "god", 
+    "gay",
+    false
+  ],
+  "values": {
+	  "SheetA": { "rawdata": [ 4, 5, 4 ] },
+	  "SheetB": { "rawdata": [ 5, 5, 5, 5, 4, 5 ] },
+	  "SheetC": { "rawdata": [ 4, 4, 5, 4 ] },
+	  "SheetD": { "rawdata": [ 4, 5, 4, 5 ] },
+	  "SheetE": { "rawdata": [ 5, 4, 5, 5, 5, 5, 5 ] },
+	  "SheetF": { "rawdata": [ 5, 4, 5, 5 ] },
+	  "SheetG": { "rawdata": [ 4, 4, 4, 5 ] },
+	  "SheetH": { "rawdata": [ 5, 5, 5, 5 ] },
+	  "SheetI": { "rawdata": [ 5, 5, 5, 5 ] }
+  }
+} -->
