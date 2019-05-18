@@ -6,17 +6,16 @@
 </head>
 <body>
 	<div class="landing-page">
-		<!-- <form action="https://us-central1-sme-survey-form.cloudfunctions.net/api/form/{spredsheetId}" method="POST"> -->
 		<form>
 			<div class="info-container">
 				Full Name: <input type="text" id='fname' name="fname" required /><br />
-	      Name of the Industry: <input type="text" id='iname' name="iname" required /><br />
-	      E-mail: <input type="email" id='email' name="email" required /><br />
-	      Contact Number: <input type="number" id='cnumber' name="cnumber" required /><br />
-	      Experience: <input type="text" id='xp' name="xp" required /><br />
-	      Gender:<br />
-	      <input type="radio" name="gender" value="male" required />Male<br />
-	      <input type="radio" name="gender" value="female" required />Female<br /><br />
+			    Name of the Industry: <input type="text" id='iname' name="iname" required /><br />
+			    E-mail: <input type="email" id='email' name="email" required /><br />
+			    Contact Number: <input type="number" id='cnumber' name="cnumber" required /><br />
+			    Experience: <input type="text" id='xp' name="xp" required /><br />
+			    Gender:<br />
+			    <input type="radio" name="gender" value="male" required />Male<br />
+			    <input type="radio" name="gender" value="female" required />Female<br /><br />
 			</div>
 	    <div class='question-container'>
 	      <!-- PAGE-1 -->
@@ -393,14 +392,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 	<script type="text/javascript">
 		document.querySelector('form').addEventListener('submit', function (e) {
-		    //prevent the normal submission of the form
-		    e.preventDefault();
+		    e.preventDefault(); // prevent the normal submission of the form
 
 		    var i, query, qcount = 40;
 		    var quesArr = new Array(qcount).fill(0);
 		    for ( i = 0; i < qcount; i++ ) {
 		      query = 'input[name="q' + (i + 1) + '"]:checked';
-		        quesArr[ i ] = document.querySelector( query ).value;
+		      quesArr[ i ] = document.querySelector( query ).value;
 		    }
 
 				fname = document.getElementById("fname").value;
@@ -408,19 +406,11 @@
 				email = document.getElementById("email").value;
 				cnumber = document.getElementById("cnumber").value;
 				xp = document.getElementById("xp").value;
-				gender = document.querySelector( 'input[name="gender"]:checked' ).value;
+				gender = document.querySelector('input[name="gender"]:checked').value;
 
 
 				params = {
-					info: [
-				    fname, 
-				    iname, 
-				    email, 
-				    cnumber, 
-				    xp, 
-				    gender,
-				    false
-					],
+					info: [ fname, iname, email, cnumber, xp, gender, false ],
 					values: {
 					  SheetA: { rawdata: [ quesArr[0], quesArr[1], quesArr[2] ] },
 					  SheetB: { rawdata: [ quesArr[3], quesArr[4],quesArr[5], quesArr[6], quesArr[7], quesArr[8] ] },
@@ -434,7 +424,8 @@
 					}
 				}
 
-				axios.post('https://us-central1-sme-survey-form.cloudfunctions.net/api/form/6969', params)
+				var spreadsheetId = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw';
+				axios.post(`http://localhost:5001/sme-survey-form/us-central1/api/form/${spreadsheetId}`, params)
 					.then(function (response) {
 					  console.log(response);
 					})
@@ -444,26 +435,3 @@
 				});
 	</script>
 </html>
-
-<!-- {
-  "info": [
-    "Ashish", 
-    "Chavda Ltd.", 
-    "fag@gag.com", 
-    1234556789, 
-    "god", 
-    "gay",
-    false
-  ],
-  "values": {
-	  "SheetA": { "rawdata": [ 4, 5, 4 ] },
-	  "SheetB": { "rawdata": [ 5, 5, 5, 5, 4, 5 ] },
-	  "SheetC": { "rawdata": [ 4, 4, 5, 4 ] },
-	  "SheetD": { "rawdata": [ 4, 5, 4, 5 ] },
-	  "SheetE": { "rawdata": [ 5, 4, 5, 5, 5, 5, 5 ] },
-	  "SheetF": { "rawdata": [ 5, 4, 5, 5 ] },
-	  "SheetG": { "rawdata": [ 4, 4, 4, 5 ] },
-	  "SheetH": { "rawdata": [ 5, 5, 5, 5 ] },
-	  "SheetI": { "rawdata": [ 5, 5, 5, 5 ] }
-  }
-} -->

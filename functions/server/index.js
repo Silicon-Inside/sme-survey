@@ -83,13 +83,13 @@ const testSheet2 = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw';
 function insertValues(auth, dataArr) {
   const sheets = google.sheets({ version: 'v4', auth });
 	sheets.spreadsheets.values.append({
-	  spreadsheetId: testSheet2,
+	  spreadsheetId: dataArr.params.spreadsheetId,
 	  range: "Info!C3",
 	  valueInputOption: 'USER_ENTERED',
 	  insertDataOption: 'INSERT_ROWS',
 	  resource: {
 	    values: [
-	      dataArr.info
+	      dataArr.body.info
 	    ],
 	    majorDimension: 'ROWS'
 	  }
@@ -107,9 +107,7 @@ function insertValues(auth, dataArr) {
 	    valueInputOption: 'USER_ENTERED',
 	    insertDataOption: 'INSERT_ROWS',
 	    resource: {
-	      values: [
-	        dataArr.values[sheetName].rawdata
-	      ],
+	      values: [ dataArr.body.values[sheetName].rawdata ],
 	      majorDimension: 'ROWS'
 	    }
 	  }, (err, result) => {
@@ -121,12 +119,12 @@ function insertValues(auth, dataArr) {
 
 module.exports = function server(deactivateErrors) {
   return function (req, res, next) {
-		res.send(req.params.spreadsheetId)
+		// res.send(req.params.spreadsheetId)
 		// Load client secrets from a local file.
 		fs.readFile(CREDENTIALS_PATH, (err, content) => {
 		  if (err) return console.log('Error loading client secret file:', err);
 		  // Authorize a client with credentials, then call the Google Sheets API.
-		  authorize(JSON.parse(content), req.body);
+		  authorize(JSON.parse(content), req);
 		});
 		if ( !deactivateErrors ) next( err )
   }
