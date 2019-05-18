@@ -425,7 +425,7 @@
 				}
 
 				var spreadsheetId = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw';
-				axios.post(`http://localhost:5001/sme-survey-form/us-central1/api/form/${spreadsheetId}`, params)
+				axios.post(`https://us-central1-sme-survey-form.cloudfunctions.net/api/form/${spreadsheetId}`, params)
 					.then(function (response) {
 					  console.log(response);
 					})
