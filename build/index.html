@@ -409,7 +409,7 @@
 				gender = document.querySelector('input[name="gender"]:checked').value;
 
 
-				params = {
+				const params = {
 					info: [ fname, iname, email, cnumber, xp, gender, false ],
 					values: {
 					  SheetA: { rawdata: [ quesArr[0], quesArr[1], quesArr[2] ] },
@@ -424,14 +424,11 @@
 					}
 				}
 
+				const apiVersion = '1.0.0';
 				var spreadsheetId = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw';
-				axios.post(`https://us-central1-sme-survey-form.cloudfunctions.net/api/form/${spreadsheetId}`, params)
-					.then(function (response) {
-					  console.log(response);
-					})
-					.catch(function (error) {
-					  console.log(error);
-					});
+				axios.post(`https://us-central1-sme-survey-form.cloudfunctions.net/api/form/${spreadsheetId}`, apiVersion, params)
+					.then(() => console.log(response))
+					.catch(() => console.log(error))
 				});
 	</script>
 </html>

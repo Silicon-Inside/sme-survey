@@ -6,15 +6,20 @@ const cors = require('cors')
 const server = require('./server')
 
 const app = express()
-const router = express.Router()
 
+app.use(cors({ origin: true }))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors({ origin: true }))
+
+const router = express.Router()
+
+router.use(apiVersionRoutes = ( req, res ) => {
+	console.log('this is the current version of the api: ', req.apiVersion)
+})
 
 router.get('/*', function (req, res) {
-	res.send("I guess you were in the wrong place!")
+	res.send("I guess you are in the wrong place!")
 })
 
 router.post('/form/:spreadsheetId', server(deactivateErrors=true), function errorHandler(err) {
