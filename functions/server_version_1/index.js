@@ -95,7 +95,7 @@ function insertValues(auth, dataArr) {
 	  }
 	}, (err, result) => {
 	  if (err) console.log(err);
-	  // else console.log(`${result.data.updates.updatedCells} cells appended in Info.`);
+	  else console.log(`${result.data.updates.updatedCells} cells appended in Info.`);
 	});
 
 	var i;
@@ -112,7 +112,7 @@ function insertValues(auth, dataArr) {
 	    }
 	  }, (err, result) => {
 	    if (err) console.log(err);
-	    // else console.log(`${result.data.updates.updatedCells} cells appended in Sheet${String.fromCharCode( --i + 65 )}.`);
+	    else console.log(`${result.data.updates.updatedCells} cells appended in Sheet${String.fromCharCode( --i + 65 )}.`);
 	  });
 	}
 }
