@@ -29,11 +29,14 @@ router.get('/*', function (req, res) {
 	res.send("I guess you are in the wrong place!")
 })
 
-// router.post('/form/:apiVersion/:spreadsheetId', server(deactivateErrors=true), function errorHandler(err) {
-// 	console.log(err)
-// 	console.error(err.stack)
-// 	res.status(500).send({ error: 'Something failed!' })
-// })
+// router.post('/form/:apiVersion/:spreadsheetId', 
+// 	server_version_1(deactivateErrors=true), 
+// 	function errorHandler(err) {
+// 		console.log(err)
+// 		console.error(err.stack)
+// 		res.status(500).send({ error: 'Something failed!' })
+// 	}
+// )
 
 router.post('/form/:apiVersion/:spreadsheetId', apiVersionRoutes({
 	'1.0.0': server_version_1( deactivateErrors=true ),
