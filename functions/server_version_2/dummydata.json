@@ -1,22 +1,22 @@
 {
-  "info": [
-    "Ashish", 
-    "Chavda Ltd.", 
-    "fag@gag.com", 
-    1234556789, 
-    "god", 
-    "gay",
-    false
-  ],
+  "info": {
+    "cnumber": "14",
+    "email": "someemail@shit.com",
+    "fname": "ff",
+    "gender": "female",
+    "iname": "Test Industry 1",
+    "xp": "gfds"
+  },
   "values": {
-	  "SheetA": { "rawdata": [ 4, 5, 4 ] },
-	  "SheetB": { "rawdata": [ 5, 5, 5, 5, 4, 5 ] },
-	  "SheetC": { "rawdata": [ 4, 4, 5, 4 ] },
-	  "SheetD": { "rawdata": [ 4, 5, 4, 5 ] },
-	  "SheetE": { "rawdata": [ 5, 4, 5, 5, 5, 5, 5 ] },
-	  "SheetF": { "rawdata": [ 5, 4, 5, 5 ] },
-	  "SheetG": { "rawdata": [ 4, 4, 4, 5 ] },
-	  "SheetH": { "rawdata": [ 5, 5, 5, 5 ] },
-	  "SheetI": { "rawdata": [ 5, 5, 5, 5 ] }
-  }
+	  "SheetA": [ 4, 5, 4 ],
+	  "SheetB": [ 5, 5, 5, 5, 4, 5 ],
+	  "SheetC": [ 4, 4, 5, 4 ],
+	  "SheetD": [ 4, 5, 4, 5 ],
+	  "SheetE": [ 5, 4, 5, 5, 5, 5, 5 ],
+	  "SheetF": [ 5, 4, 5, 5 ],
+	  "SheetG": [ 4, 4, 4, 5 ],
+	  "SheetH": [ 5, 5, 5, 5 ],
+	  "SheetI": [ 5, 5, 5, 5 ]
+  },
+  "time": "2019-06-19T20:02:00.484Z"
 }

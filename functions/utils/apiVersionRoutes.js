@@ -12,3 +12,7 @@ module.exports = function apiVersionRoutes( args ) {
 		resFunction.call(this, functionParams)
   }
 }
+
+// REF: https://github.com/Prasanna-sr/express-routes-versioning
+// REF: https://github.com/lirantal/express-version-route
+// REF: https://docs.npmjs.com/misc/semver

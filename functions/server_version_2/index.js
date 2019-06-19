@@ -23,7 +23,7 @@ const CREDENTIALS_PATH = 'key/credentials.json';
  * @param {function} callback The callback to call with the authorized client.
  */
 
-function authorize(credentials, dataArr) {
+function authorize(credentials, req) {
   const {
     client_secret, 
     client_id, 
@@ -40,7 +40,7 @@ function authorize(credentials, dataArr) {
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback);
     oAuth2Client.setCredentials(JSON.parse(token));
-    insertValues(oAuth2Client, dataArr);
+    insertValues(oAuth2Client, req);
   });
 }
 
@@ -80,16 +80,24 @@ const testSheet1 = '1M-30lRrwXCXiaGnCrk85vwaGkfs0YU1r35DIwCJy4MA';
 const testSheet2 = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw';
 
 
-function insertValues(auth, dataArr) {
+function insertValues(auth, req) {
   const sheets = google.sheets({ version: 'v4', auth });
 	sheets.spreadsheets.values.append({
-	  spreadsheetId: dataArr.params.spreadsheetId,
+	  spreadsheetId: req.params.spreadsheetId,
 	  range: "Info!C3",
 	  valueInputOption: 'USER_ENTERED',
 	  insertDataOption: 'INSERT_ROWS',
 	  resource: {
 	    values: [
-	      dataArr.body.info
+        [
+          req.body.info.iname,
+          req.body.info.fname,
+          req.body.info.email,
+          req.body.info.cnumber,
+          req.body.info.xp,
+          req.body.info.gender,
+          req.body.time,
+        ]
 	    ],
 	    majorDimension: 'ROWS'
 	  }
@@ -107,7 +115,7 @@ function insertValues(auth, dataArr) {
 	    valueInputOption: 'USER_ENTERED',
 	    insertDataOption: 'INSERT_ROWS',
 	    resource: {
-	      values: [ dataArr.body.values[sheetName].rawdata ],
+	      values: [ req.body.values[sheetName] ],
 	      majorDimension: 'ROWS'
 	    }
 	  }, (err, result) => {

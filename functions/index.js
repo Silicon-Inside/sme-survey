@@ -1,4 +1,4 @@
-const config = require('./utils/config.js')
+// const config = require('./utils/config.js')
 
 const functions = require('firebase-functions')
 const bodyParser = require('body-parser')
