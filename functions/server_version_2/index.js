@@ -117,7 +117,7 @@ function insertValues(auth, dataArr) {
 	}
 }
 
-module.exports = function server(deactivateErrors) {
+module.exports = function server(deactivateErrors=true) {
   return function (req, res, next) {
 		// res.send(req.params.spreadsheetId)
 		// Load client secrets from a local file.

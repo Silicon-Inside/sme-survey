@@ -31,6 +31,7 @@ const production = {
 }
 
 const config = { development, production }
+const env = process.env.NODE_ENV || functions.config().config.env
 
-module.exports = config[process.env.NODE_ENV || functions.config().config.env];
+module.exports = config[env];
 
