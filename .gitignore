@@ -67,9 +67,4 @@ node_modules/
 # secret keys
 key/
 
-# env
-.env
 
-# notes
-# https://github.com/digvijayu/spike_node_read_data_from_google_sheets
-# firebase serve --only functions
