@@ -76,58 +76,54 @@ function getNewToken(oAuth2Client) {
   });
 }
 
-const testSheet1 = '1M-30lRrwXCXiaGnCrk85vwaGkfs0YU1r35DIwCJy4MA';
-const testSheet2 = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw';
+// const testSheet1 = '1M-30lRrwXCXiaGnCrk85vwaGkfs0YU1r35DIwCJy4MA';
+// const testSheet2 = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw'; // default
 
 
 function insertValues(auth, req) {
   const sheets = google.sheets({ version: 'v4', auth });
 	sheets.spreadsheets.values.append({
-	  spreadsheetId: req.params.spreadsheetId,
-	  range: "Info!C3",
+	  spreadsheetId: req.body.params.info.iname,
+	  range: "Info!D3",
 	  valueInputOption: 'USER_ENTERED',
 	  insertDataOption: 'INSERT_ROWS',
 	  resource: {
-	    values: [
-        [
-          req.body.info.iname,
-          req.body.info.fname,
-          req.body.info.email,
-          req.body.info.cnumber,
-          req.body.info.xp,
-          req.body.info.gender,
-          req.body.time,
-        ]
-	    ],
+	    values: [[
+        req.body.params.info.fname,
+        req.body.params.info.email,
+        req.body.params.info.cnumber,
+        req.body.params.info.xp,
+        req.body.params.info.gender,
+        req.body.params.time,
+      ]],
 	    majorDimension: 'ROWS'
 	  }
 	}, (err, result) => {
 	  if (err) console.log(err);
-	  else console.log(`${result.data.updates.updatedCells} cells appended in Info.`);
+	  // else console.log(`${result.data.updates.updatedCells} cells appended in Info.`);
 	});
 
 	var i;
 	for ( i = 0; i < 9; ++i ) {
 	  var sheetName = "Sheet" + String.fromCharCode( i + 65 );
 	  sheets.spreadsheets.values.append({
-	    spreadsheetId: testSheet2,
+	    spreadsheetId: req.body.params.info.iname,
 	    range: (sheetName + "!C4"),
 	    valueInputOption: 'USER_ENTERED',
 	    insertDataOption: 'INSERT_ROWS',
 	    resource: {
-	      values: [ req.body.values[sheetName] ],
+	      values: [ req.body.params.values[sheetName] ],
 	      majorDimension: 'ROWS'
 	    }
 	  }, (err, result) => {
 	    if (err) console.log(err);
-	    else console.log(`${result.data.updates.updatedCells} cells appended in Sheet${String.fromCharCode( --i + 65 )}.`);
+	    // else console.log(`${result.data.updates.updatedCells} cells appended in Sheet${String.fromCharCode( --i + 65 )}.`);
 	  });
 	}
 }
 
 module.exports = function server(deactivateErrors=true) {
   return function (req, res, next) {
-		// res.send(req.params.spreadsheetId)
 		// Load client secrets from a local file.
 		fs.readFile(CREDENTIALS_PATH, (err, content) => {
 		  if (err) return console.log('Error loading client secret file:', err);
