@@ -76,26 +76,36 @@ function getNewToken(oAuth2Client) {
   });
 }
 
-// const testSheet1 = '1M-30lRrwXCXiaGnCrk85vwaGkfs0YU1r35DIwCJy4MA';
-// const testSheet2 = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw'; // default
+const urlTestSheet1 = '1M-30lRrwXCXiaGnCrk85vwaGkfs0YU1r35DIwCJy4MA';
+const urlTestSheet2 = '1pbEG_HGrhKsh8seYF4-7h-5Wiq6PBVvKWqZjuitQmJw'; // default
 
 
 function insertValues(auth, req) {
   const sheets = google.sheets({ version: 'v4', auth });
+  
+  var iname = 'Test Sheet'
+  if (req.body.params.info.iname === urlTestSheet2)
+    iname = 'Test Sheet 2'
+  else if (req.body.params.info.iname === urlTestSheet1)
+    iname = 'Test Sheet 1'
+
 	sheets.spreadsheets.values.append({
 	  spreadsheetId: req.body.params.info.iname,
-	  range: "Info!D3",
+	  range: "Info!C3",
 	  valueInputOption: 'USER_ENTERED',
 	  insertDataOption: 'INSERT_ROWS',
 	  resource: {
-	    values: [[
-        req.body.params.info.fname,
-        req.body.params.info.email,
-        req.body.params.info.cnumber,
-        req.body.params.info.xp,
-        req.body.params.info.gender,
-        req.body.params.time,
-      ]],
+	    values: [
+        [
+          iname,
+          req.body.params.info.fname,
+          req.body.params.info.email,
+          req.body.params.info.cnumber,
+          req.body.params.info.xp,
+          req.body.params.info.gender,
+          req.body.params.time,
+        ]
+      ],
 	    majorDimension: 'ROWS'
 	  }
 	}, (err, result) => {
