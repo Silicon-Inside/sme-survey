@@ -67,4 +67,5 @@ node_modules/
 # secret keys
 key/
 
-
+# production
+/build

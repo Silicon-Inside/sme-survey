@@ -1,0 +1,218 @@
+{
+  "pages": [
+    {
+      "id": "SheetA",
+      "title": "Organizational Attributes",
+      "questions": [
+        {
+          "text": "Safety policy has implemented in the industry.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has a safety department & committee.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "All the workers are always made aware of safety issues by safety officer.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetB",
+      "title": "Occupational Safety Services/documentation",
+      "questions": [
+        {
+          "text": "Periodic medical examination is done for all the workers.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "All the workers are having medical insurance which is provided by the industry.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "First aid boxes contain all the required medicines in all the sections.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Safety programs conducted for workers are well documented.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Record of accidents is maintained by the industry.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Worker’s absentee record is maintained by the industry.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetC",
+      "title": "Workplace Layout and Housekeeping",
+      "questions": [
+        {
+          "text": "There is adequate and smooth flow of material.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Well designed layout of safe and smooth production line.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Floors, walls and ceilings are properly designed and cleaned.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Waste is properly disposed, disposable bins are clearly marked and located.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetD",
+      "title": "Equipment & Hand Tools Safety and Machine Guarding",
+      "questions": [
+        {
+          "text": "Periodic medical examination is done for all the workers.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Proper guards are available with all machinery and equipment’s.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has proper storage area for hand tools.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Training programs are conducted frequently for proper use of hand tools and equipments.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetE",
+      "title": "Fire Prevention, fire fighting and electrical safety",
+      "questions": [
+        {
+          "text": "Industry has fire detection system.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Alarm system is implemented in the industry.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Training is carried out for fire-fighting and emergency plan.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has fire extinguishing system.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "In case of emergency, we are using emergency exit and exit signs.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "There is proper coverage of electrical wires and cables.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has proper electrical wiring.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetF",
+      "title": "Material Handling and Storage",
+      "questions": [
+        {
+          "text": "Industry provides safe and secure transportation for material handling.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has provision of proper cranes and conveyors.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry made proper schedule to inspect the material handling and storage area.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has safe storage and stacking for material handling.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetG",
+      "title": "Occupational Exposures",
+      "questions": [
+        {
+          "text": "Workers are fully protected from liquid chemicals.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has proper arrangement to control noise and vibration pollution.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry has provision for avoiding exposure to high thermal conditions.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "There is monitoring system for occupational exposures.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetH",
+      "title": "Personal Protective Equipment (PPE)",
+      "questions": [
+        {
+          "text": "Industry provides personal protective equipments (PPE) to workers.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "All the workers are using proper PPE.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "PPE are maintained and serviced properly.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Industry provides the training for PPE usage.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    },
+    {
+      "id": "SheetI",
+      "title": "Hygiene Factors",
+      "questions": [
+        {
+          "text": "Proper supply of drinking water within the industry.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Bathrooms, toilets and urinals are properly cleaned.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "Rest area and canteen is available for workers.",
+          "choices": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "text": "There is good quality of light and ventilation in the working area.",
+          "choices": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    }
+  ]
+}
