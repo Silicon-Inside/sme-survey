@@ -58,7 +58,8 @@ class FormEntry extends Component {
 
     let apiVersion = 'v2.0.0';
     API.post(apiVersion, { params })
-      .then(res => console.log(JSON.parse(res.config.data)))
+      // .then(res => console.log(JSON.parse(res.config.data)))
+      .then(res => console.log(res))
       .then(() => this.setState({ postRequestCompleted: true }))
       .catch(err => console.log(err))
 

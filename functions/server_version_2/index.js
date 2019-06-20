@@ -40,6 +40,8 @@ function authorize(credentials, req) {
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback);
     oAuth2Client.setCredentials(JSON.parse(token));
+
+
     insertValues(oAuth2Client, req);
   });
 }
@@ -130,6 +132,7 @@ function insertValues(auth, req) {
 	    // else console.log(`${result.data.updates.updatedCells} cells appended in Sheet${String.fromCharCode( --i + 65 )}.`);
 	  });
 	}
+
 }
 
 module.exports = function server(deactivateErrors=true) {
@@ -137,9 +140,11 @@ module.exports = function server(deactivateErrors=true) {
 		// Load client secrets from a local file.
 		fs.readFile(CREDENTIALS_PATH, (err, content) => {
 		  if (err) return console.log('Error loading client secret file:', err);
+      else res.status(200).send('Sheet Updated ;)!')
 		  // Authorize a client with credentials, then call the Google Sheets API.
 		  authorize(JSON.parse(content), req);
 		});
+
 		if ( !deactivateErrors ) next( err )
   }
 }

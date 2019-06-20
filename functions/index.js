@@ -41,7 +41,6 @@ router.get('/*', function (req, res) {
 router.post('/form/:apiVersion', 
 	server_version_2(deactivateErrors=true), 
 	function errorHandler(err) {
-		console.log(err)
 		console.error(err.stack)
 		res.status(500).send({ error: 'Something failed!' })
 	}
