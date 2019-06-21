@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Router, Route, Switch } from "react-router-dom"
 import { createBrowserHistory } from "history"
 
-import routesApp from './Routes/App'
+import routesApp from './Helpers/Routes/App'
 
 const hist = createBrowserHistory()
 

@@ -1,4 +1,4 @@
-import FormUserResults from '../../Components/FormUserResults'
+import FormUserResults from '../../../Components/FormUserResults'
 
 export default [
   {

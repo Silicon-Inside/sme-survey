@@ -1,7 +1,7 @@
-import FormUserIntro from '../../Components/FormUserIntro'
-import FormEntry from '../../Components/FormEntry'
-import PageNotFound from '../../Components/PageNotFound'
-import FormUserResults from '../../Components/FormUserResults'
+import FormUserIntro from '../../../Components/FormUserIntro'
+import FormEntry from '../../../Components/FormEntry'
+import PageNotFound from '../../../Components/PageNotFound'
+import FormUserResults from '../../../Components/FormUserResults'
 
 export default [
   {
