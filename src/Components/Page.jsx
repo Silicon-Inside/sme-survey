@@ -12,12 +12,13 @@ class Page extends Component {
     this.handleInputGroupRadioChange = this.handleInputGroupRadioChange.bind(this);
 
     this.state = {
+      allEntriesChecked: false,
       sheetData: {},
       rawData: {}
     };
   }
 
-  // TODO: improve method
+  // TODO: improve nested method
   // TODO: rename sheetData and rawData to something intutive
 	handleInputGroupRadioChange ( question, value, sheetId ) {
     this.setState({

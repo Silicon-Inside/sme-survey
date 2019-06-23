@@ -19,15 +19,16 @@ class FormEntry extends Component {
 		this.collectValues = this.collectValues.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     
-		this.prevStep = this.prevStep.bind(this);
 		this.nextStep = this.nextStep.bind(this);
 
 		this.state = {
       info: {},
       values: {},
+      apiVersion: 'v2.0.0',
       postRequestCompleted: false,
       modal: false,
-      page: 0
+      page: 0,
+      allEntriesChecked: true
     };
 
     this.pages = [
@@ -41,7 +42,7 @@ class FormEntry extends Component {
     ]
 	}
 
-  collectValues (value, name) {
+  collectValues (name, value) {
     if ( name === 'info' )
       this.setState(state => ({ info: value }))
     else if ( name === 'values' )
@@ -56,22 +57,18 @@ class FormEntry extends Component {
       time: new Date()
     };
 
-    let apiVersion = 'v2.0.0';
-    API.post(apiVersion, { params })
-      // .then(res => console.log(JSON.parse(res.config.data)))
-      .then(res => console.log(res))
-      .then(() => this.setState({ postRequestCompleted: true }))
-      .catch(err => console.log(err))
-
-    this.setState({ modal: true })
-  }
-
-  prevStep () {
-    this.setState({ page: this.state.page - 1 })
+    if ( this.state.allEntriesChecked ) {
+      this.setState({ modal: true })
+      API.post(this.state.apiVersion, { params })
+        .then(res => console.log(res))
+        .then(() => this.setState({ postRequestCompleted: true }))
+        .catch(err => console.log(err))
+    }
   }
 
 	nextStep () {
-    this.setState({ page: this.state.page + 1 })
+    if ( this.state.allEntriesChecked )
+      this.setState({ page: (this.state.page + 1) })
 	}
   
   render () {

@@ -8,7 +8,10 @@ class InputGroupRadio extends Component {
     
     this.handleInputChange = this.handleInputChange.bind(this);
     
-    this.state = { [this.props.name]: 0 };
+    this.state = { 
+      allEntriesChecked: false,
+      [this.props.name]: 0 
+    };
   }
 
 	handleInputChange ( e ) {
@@ -31,6 +34,7 @@ class InputGroupRadio extends Component {
           name={name}
           label={choice}
           onChange={this.handleInputChange}
+          invalid={!this.state.allEntriesChecked}
         inline />
       )
     })
