@@ -17,7 +17,7 @@ export class FormUserSelections extends Component {
 		this.state = {
 			cardNumber: 0,
 			values: {},
-      allEntriesChecked: false
+      allEntriesPending: false
 		};
 	}
 
@@ -26,7 +26,7 @@ export class FormUserSelections extends Component {
 			values: { ...this.state.values, [sheetId]: data }
 		}, () => {
 			// Callback to FormEntry
-			this.props.changeValue('values', this.state.values);
+			this.props.changeValue('values', this.state.values, this.state.allEntriesPending);
 		})
 	}
 

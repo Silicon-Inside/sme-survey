@@ -28,12 +28,12 @@ class FormEntry extends Component {
       postRequestCompleted: false,
       modal: false,
       page: 0,
-      allEntriesChecked: true
+      entriesPending: true
     };
 
     this.pages = [
-      <FormUserDetails changeValue={this.collectValues} />,
-      <FormUserSelections changeValue={this.collectValues} />
+      <FormUserDetails changeValue={this.collectValues} info={this.state.info}/>,
+      <FormUserSelections changeValue={this.collectValues} values={this.state.values}/>
     ]
 
     this.buttons = [
@@ -42,11 +42,13 @@ class FormEntry extends Component {
     ]
 	}
 
-  collectValues (name, value) {
+  collectValues (name, value, entriesPendingStatus) {
+    this.setState({ entriesPending: entriesPendingStatus })
+
     if ( name === 'info' )
-      this.setState(state => ({ info: value }))
+      this.setState({ info: value })
     else if ( name === 'values' )
-      this.setState(state => ({ values: value }))
+      this.setState({ values: value })
   }
 
   // TODO: use componentDidMount() (i.e async await)
@@ -57,18 +59,15 @@ class FormEntry extends Component {
       time: new Date()
     };
 
-    if ( this.state.allEntriesChecked ) {
-      this.setState({ modal: true })
-      API.post(this.state.apiVersion, { params })
-        .then(res => console.log(res))
-        .then(() => this.setState({ postRequestCompleted: true }))
-        .catch(err => console.log(err))
-    }
+    this.setState({ modal: true })
+    API.post(this.state.apiVersion, { params })
+      .then(res => console.log(res))
+      .then(() => this.setState({ postRequestCompleted: true }))
+      .catch(err => console.log(err))
   }
 
 	nextStep () {
-    if ( this.state.allEntriesChecked )
-      this.setState({ page: (this.state.page + 1) })
+    this.setState({ page: (this.state.page + 1) })
 	}
   
   render () {
@@ -90,7 +89,7 @@ class FormEntry extends Component {
                 <CardTitle>Form</CardTitle>
               </CardHeader>
               <CardBody>{this.pages[this.state.page]}</CardBody>
-              <CardFooter>{this.buttons[this.state.page]}</CardFooter>
+              <CardFooter>{!this.state.entriesPending && this.buttons[this.state.page]}</CardFooter>
             </Card>
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
               <Spinner style={ stylish } />

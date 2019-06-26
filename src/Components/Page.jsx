@@ -12,7 +12,6 @@ class Page extends Component {
     this.handleInputGroupRadioChange = this.handleInputGroupRadioChange.bind(this);
 
     this.state = {
-      allEntriesChecked: false,
       sheetData: {},
       rawData: {}
     };
