@@ -11,10 +11,13 @@ export class FormUserSelections extends Component {
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.createPages = this.createPages.bind(this);
 
+		this.prevStep = this.prevStep.bind(this);
+		this.nextStep = this.nextStep.bind(this);
+
 		this.state = {
-			pageNumber: 0,
-			allChecked: false,
-			values: {}
+			cardNumber: 0,
+			values: {},
+      allEntriesPending: false
 		};
 	}
 
@@ -23,7 +26,7 @@ export class FormUserSelections extends Component {
 			values: { ...this.state.values, [sheetId]: data }
 		}, () => {
 			// Callback to FormEntry
-			this.props.changeValue(this.state.values, 'values');
+			this.props.changeValue('values', this.state.values, this.state.allEntriesPending);
 		})
 	}
 
@@ -32,7 +35,15 @@ export class FormUserSelections extends Component {
       return <Page key={page.id} page={page} onPageEntry={this.handleInputChange} />
 		})
   }
-  
+	
+	prevStep () {
+    this.setState({ cardNumber: this.state.cardNumber - 1 })
+  }
+
+	nextStep () {
+    this.setState({ cardNumber: this.state.cardNumber - 1 })
+	}
+
 	render () {
 		return <div>{this.createPages( datastore.pages )}</div>
 	}

@@ -17,7 +17,7 @@ class Page extends Component {
     };
   }
 
-  // TODO: improve method
+  // TODO: improve nested method
   // TODO: rename sheetData and rawData to something intutive
 	handleInputGroupRadioChange ( question, value, sheetId ) {
     this.setState({

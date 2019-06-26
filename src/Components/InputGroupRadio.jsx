@@ -31,6 +31,7 @@ class InputGroupRadio extends Component {
           name={name}
           label={choice}
           onChange={this.handleInputChange}
+          invalid={false}
         inline />
       )
     })
